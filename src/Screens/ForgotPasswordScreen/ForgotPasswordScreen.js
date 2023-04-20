@@ -5,13 +5,23 @@ import CustomInput from "../../Component/CustomInput/CustomInput";
 import CustomButton from "../../Component/CustomButton/CustomButton";
 import SocialSignInButtons from "../../Component/SocialSignInButtons/SocialSignInButtons";
 
+import {useNavigation} from "@react-navigation/native";
+
 
 const ForgotPasswordScreen = () => {
     const [userName , setUserName] = useState("");
+    const navigation = useNavigation();
+
     
 
    const onSendPressed = () => {
-    console.warn("ForgotPasswordScreen");
+    navigation.navigate("NewPassword")
+    
+   }
+   
+   const onPackToSignIn = () => {
+    
+    navigation.navigate("SignIn");
    }
 
 
@@ -34,6 +44,7 @@ const ForgotPasswordScreen = () => {
             <CustomButton
             text="back to sign in "
            type="TERTIARY"
+           onPress={onPackToSignIn}
        
             />
           

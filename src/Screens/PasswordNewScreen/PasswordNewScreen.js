@@ -3,16 +3,21 @@ import React ,{ useState} from "react";
 import {View , Text , Image , StyleSheet , useWindowDimensions , ScrollView} from "react-native";
 import CustomInput from "../../Component/CustomInput/CustomInput";
 import CustomButton from "../../Component/CustomButton/CustomButton";
-import SocialSignInButtons from "../../Component/SocialSignInButtons/SocialSignInButtons";
 
+import { useNavigation } from "@react-navigation/native";
 
 const PasswordNewScreen = () => {
     const [code , setCode] = useState("");
     const [password , setPassword] = useState("");
+    const navigation = useNavigation();
     
 
    const onSumbetPressed = () => {
     console.warn("ForgotPasswordScreen");
+   }
+
+   const onSignInPressed = () => {
+    navigation.navigate("SignIn");
    }
 
 
@@ -40,7 +45,7 @@ const PasswordNewScreen = () => {
             <CustomButton
             text="back to sign in "
            type="TERTIARY"
-       
+            onPress={onSignInPressed}
             />
           
         </View>

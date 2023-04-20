@@ -4,15 +4,23 @@ import {View , Text , Image , StyleSheet , useWindowDimensions , ScrollView} fro
 import CustomInput from "../../Component/CustomInput/CustomInput";
 import CustomButton from "../../Component/CustomButton/CustomButton";
 import SocialSignInButtons from "../../Component/SocialSignInButtons/SocialSignInButtons";
+import { useNavigation } from "@react-navigation/native";
 
 
 const ConfirmEmailScreen = () => {
     const [code , setCode] = useState("");
+    const navigation = useNavigation();
+    
     
 
    const onConfirmPressed = () => {
-    console.warn("ConfirmEmailScreen");
+    navigation.navigate("Home");
    }
+
+   const onSignInPressed = () => {
+
+    navigation.navigate("SignIn");
+   };
 
 
 
@@ -42,6 +50,8 @@ const ConfirmEmailScreen = () => {
             <CustomButton
             text="back to sign in "
            type="TERTIARY"
+           
+            onPress={onSignInPressed}
        
             />
           
