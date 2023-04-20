@@ -1,58 +1,52 @@
 import React ,{ useState} from "react";
 
 import {View , Text , Image , StyleSheet , useWindowDimensions , ScrollView} from "react-native";
-import CustomInput from "../../Component/CustomInput/CustomInput";
-import CustomButton from "../../Component/CustomButton/CustomButton";
-import SocialSignInButtons from "../../Component/SocialSignInButtons/SocialSignInButtons";
+import CustomInput from "../../../Component/CustomInput/CustomInput";
+import CustomButton from "../../../Component/CustomButton/CustomButton";
+import SocialSignInButtons from "../../../Component/SocialSignInButtons/SocialSignInButtons";
+
 import { useNavigation } from "@react-navigation/native";
 
-
-const ConfirmEmailScreen = () => {
+const PasswordNewScreen = () => {
     const [code , setCode] = useState("");
+    const [password , setPassword] = useState("");
     const navigation = useNavigation();
     
-    
 
-   const onConfirmPressed = () => {
-    navigation.navigate("Home");
+   const onSumbetPressed = () => {
+    console.warn("ForgotPasswordScreen");
    }
 
    const onSignInPressed = () => {
-
     navigation.navigate("SignIn");
-   };
+   }
 
 
 
     return (
         <ScrollView>
         <View style={styles.root}>
-    <Text style={styles.title}>Confirm your email</Text>
+    <Text style={styles.title}>Reset your password</Text>
             <CustomInput 
             placeholder="code"
             value={code}
             setValue={setCode}
              />
+             <CustomInput 
+            placeholder="New Password"
+            value={password}
+            setValue={setPassword}
+             />
 
             <CustomButton
-            text="Confirm"
-            onPress={onConfirmPressed}
-            />
-
-        
-           
-             <CustomButton
-            text="Resend code "
-            type='SECONDARY'
-       
+            text="Sumbet"
+            onPress={onSumbetPressed}
             />
 
             <CustomButton
             text="back to sign in "
            type="TERTIARY"
-           
             onPress={onSignInPressed}
-       
             />
           
         </View>
@@ -70,7 +64,7 @@ const styles = StyleSheet.create({
     title:{
         paddingTop: 50,
         marginBottom: 8,
-        fontSize: 35,
+        fontSize: 25,
         color: 'blue',
         fontWeight: "bold",
         textAlign: "center"
@@ -86,4 +80,4 @@ const styles = StyleSheet.create({
     }
 
 })
-export default ConfirmEmailScreen;
+export default PasswordNewScreen;

@@ -1,50 +1,57 @@
 import React ,{ useState} from "react";
 
 import {View , Text , Image , StyleSheet , useWindowDimensions , ScrollView} from "react-native";
-import CustomInput from "../../Component/CustomInput/CustomInput";
-import CustomButton from "../../Component/CustomButton/CustomButton";
-import SocialSignInButtons from "../../Component/SocialSignInButtons/SocialSignInButtons";
+import CustomInput from "../../../Component/CustomInput/CustomInput";
+import CustomButton from "../../../Component/CustomButton/CustomButton";
+import SocialSignInButtons from "../../../Component/SocialSignInButtons/SocialSignInButtons";
+import { useNavigation } from "@react-navigation/native";
 
-import {useNavigation} from "@react-navigation/native";
 
-
-const ForgotPasswordScreen = () => {
-    const [userName , setUserName] = useState("");
+const ConfirmEmailScreen = () => {
+    const [code , setCode] = useState("");
     const navigation = useNavigation();
-
+    
     
 
-   const onSendPressed = () => {
-    navigation.navigate("NewPassword")
-    
+   const onConfirmPressed = () => {
+    navigation.navigate("Home");
    }
-   
-   const onPackToSignIn = () => {
-    
+
+   const onSignInPressed = () => {
+
     navigation.navigate("SignIn");
-   }
+   };
 
 
 
     return (
         <ScrollView>
         <View style={styles.root}>
-    <Text style={styles.title}>Reset your password</Text>
+    <Text style={styles.title}>Confirm your email</Text>
             <CustomInput 
-            placeholder="UserName"
-            value={userName}
-            setValue={setUserName}
+            placeholder="code"
+            value={code}
+            setValue={setCode}
              />
 
             <CustomButton
-            text="Send"
-            onPress={onSendPressed}
+            text="Confirm"
+            onPress={onConfirmPressed}
+            />
+
+        
+           
+             <CustomButton
+            text="Resend code "
+            type='SECONDARY'
+       
             />
 
             <CustomButton
             text="back to sign in "
            type="TERTIARY"
-           onPress={onPackToSignIn}
+           
+            onPress={onSignInPressed}
        
             />
           
@@ -63,7 +70,7 @@ const styles = StyleSheet.create({
     title:{
         paddingTop: 50,
         marginBottom: 8,
-        fontSize: 25,
+        fontSize: 35,
         color: 'blue',
         fontWeight: "bold",
         textAlign: "center"
@@ -79,4 +86,4 @@ const styles = StyleSheet.create({
     }
 
 })
-export default ForgotPasswordScreen;
+export default ConfirmEmailScreen;

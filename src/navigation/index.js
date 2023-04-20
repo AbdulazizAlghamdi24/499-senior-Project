@@ -1,12 +1,12 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import SignInScreen from '../Screens/SignInScreen';
-import SignUpScreen from '../Screens/SignUpScreen';
-import ConfirmEmailScreen from '../Screens/ConfirmEmailScreen';
-import ForgotPasswordScreen from '../Screens/ForgotPasswordScreen';
-import PasswordNewScreen from '../Screens/PasswordNewScreen';
-import HomeScreen from '../Screens/HomeScreen';
+import SignInScreen from '../Screens/RegisterSignInScreesn/SignInScreen';
+import SignUpScreen from '../Screens/RegisterSignInScreesn/SignUpScreen';
+import ConfirmEmailScreen from '../Screens/RegisterSignInScreesn/ConfirmEmailScreen';
+import ForgotPasswordScreen from '../Screens/RegisterSignInScreesn/ForgotPasswordScreen';
+import PasswordNewScreen from '../Screens/RegisterSignInScreesn/PasswordNewScreen';
+import HomeScreen from '../Screens/RegisterSignInScreesn/HomeScreen';
 
 
 const Stack = createStackNavigator();

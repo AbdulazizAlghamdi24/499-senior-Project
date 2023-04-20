@@ -1,22 +1,26 @@
 import React ,{ useState} from "react";
 
 import {View , Text , Image , StyleSheet , useWindowDimensions , ScrollView} from "react-native";
-import CustomInput from "../../Component/CustomInput/CustomInput";
-import CustomButton from "../../Component/CustomButton/CustomButton";
+import CustomInput from "../../../Component/CustomInput/CustomInput";
+import CustomButton from "../../../Component/CustomButton/CustomButton";
+import SocialSignInButtons from "../../../Component/SocialSignInButtons/SocialSignInButtons";
 
-import { useNavigation } from "@react-navigation/native";
+import {useNavigation} from "@react-navigation/native";
 
-const PasswordNewScreen = () => {
-    const [code , setCode] = useState("");
-    const [password , setPassword] = useState("");
+
+const ForgotPasswordScreen = () => {
+    const [userName , setUserName] = useState("");
     const navigation = useNavigation();
+
     
 
-   const onSumbetPressed = () => {
-    console.warn("ForgotPasswordScreen");
+   const onSendPressed = () => {
+    navigation.navigate("NewPassword")
+    
    }
-
-   const onSignInPressed = () => {
+   
+   const onPackToSignIn = () => {
+    
     navigation.navigate("SignIn");
    }
 
@@ -27,25 +31,21 @@ const PasswordNewScreen = () => {
         <View style={styles.root}>
     <Text style={styles.title}>Reset your password</Text>
             <CustomInput 
-            placeholder="code"
-            value={code}
-            setValue={setCode}
-             />
-             <CustomInput 
-            placeholder="New Password"
-            value={password}
-            setValue={setPassword}
+            placeholder="UserName"
+            value={userName}
+            setValue={setUserName}
              />
 
             <CustomButton
-            text="Sumbet"
-            onPress={onSumbetPressed}
+            text="Send"
+            onPress={onSendPressed}
             />
 
             <CustomButton
             text="back to sign in "
            type="TERTIARY"
-            onPress={onSignInPressed}
+           onPress={onPackToSignIn}
+       
             />
           
         </View>
@@ -79,4 +79,4 @@ const styles = StyleSheet.create({
     }
 
 })
-export default PasswordNewScreen;
+export default ForgotPasswordScreen;
