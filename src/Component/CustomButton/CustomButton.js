@@ -43,6 +43,11 @@ container_PRIMARY: {
 
 container_TERTIARY: {},
 
+container_SECONDARY: {
+    borderColor: '#3B71F3',
+    borderWidth: 2,
+},
+
 
 text: {
     fontWeight: 'bold',
@@ -51,6 +56,10 @@ text: {
 
 text_TERTIARY: {
     color: 'grey',
+},
+text_SECONDARY: {
+
+    color: '#3B71F3',
 },
 
 

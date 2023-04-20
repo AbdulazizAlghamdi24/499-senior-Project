@@ -4,6 +4,7 @@ import {View , Text , Image , StyleSheet , useWindowDimensions , ScrollView} fro
 import Logo from '../../../assets/logo.png'
 import CustomInput from "../../Component/CustomInput/CustomInput";
 import CustomButton from "../../Component/CustomButton/CustomButton";
+import SocialSignInButtons from "../../Component/SocialSignInButtons/SocialSignInButtons";
 
 
 const SignInScreen = () => {
@@ -19,12 +20,7 @@ const SignInScreen = () => {
     const onForgotPasswordPressed = () => {
         console.warn("forgotPasswordPressed")
     }
-    const onSignInwithFacebookPressed = () => {
-        console.warn("signInwithFacebookPressed")
-    }
-    const onSignInwithGooglePressed = () => {
-        console.warn("signInwithGooglePressed")
-    }
+   
 
 
     return (
@@ -56,19 +52,8 @@ const SignInScreen = () => {
             onPress={onForgotPasswordPressed}
             type='TERTIARY'
             />
-            <CustomButton
-            text="Sign In with Facebook"
-            onPress={onSignInwithFacebookPressed}
-            bgColor="#E7EAF4"
-            fgColor="#4765A9"
             
-            />
-            <CustomButton
-            text="Sign In with Google"
-            onPress={onSignInwithGooglePressed}
-            bgColor="#FAE9EA"
-            fgColor="#DD4D44"
-            />
+            <SocialSignInButtons/>
 
             <CustomButton
             text="Don't have an account?"
