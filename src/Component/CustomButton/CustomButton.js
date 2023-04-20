@@ -34,7 +34,7 @@ container:{
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical : 7,
+    marginVertical : 6,
 },
 
 container_PRIMARY: {
